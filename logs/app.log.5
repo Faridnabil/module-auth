@@ -1,38 +1,8 @@
-2025-03-01 14:32:33 WARN  [io.quarkus.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.datasource.jdbc.url" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2025-03-01 14:32:33 WARN  [io.quarkus.hibernate.orm.runtime.service.QuarkusRuntimeInitDialectFactory] (JPA Startup Thread) Persistence unit default-reactive: Could not retrieve the database version to check it is at least 12.0.0
-2025-03-01 14:32:33 INFO  [io.quarkus] (Quarkus Main Thread) module-auth 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 1.452s. Listening on: http://localhost:8080
-2025-03-01 14:32:33 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2025-03-01 14:32:33 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-orm, hibernate-reactive, hibernate-reactive-panache, reactive-pg-client, rest, rest-jackson, security, security-jpa-reactive, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
-2025-03-01 14:32:33 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-4) Live reload total time: 3.038s 
-2025-03-01 14:33:05 ERROR [io.quarkus.vertx.http.runtime.QuarkusErrorHandler] (vert.x-eventloop-thread-0) HTTP Request to /auth/register failed, error id: 21bec94e-6de7-439c-8459-9fdb5bce0e5c-2: java.lang.IllegalStateException: No current Mutiny.Session found
-	- no reactive session was found in the Vert.x context and the context was not marked to open a new session lazily
-	- a session is opened automatically for JAX-RS resource methods annotated with an HTTP method (@GET, @POST, etc.); inherited annotations are not taken into account
-	- you may need to annotate the business method with @WithSession or @WithTransaction
-	at io.quarkus.hibernate.reactive.panache.common.runtime.SessionOperations.getSession(SessionOperations.java:159)
-	at io.quarkus.hibernate.reactive.panache.common.runtime.AbstractJpaOperations.getSession(AbstractJpaOperations.java:368)
-	at io.quarkus.hibernate.reactive.panache.common.runtime.AbstractJpaOperations.persist(AbstractJpaOperations.java:37)
-	at io.quarkus.hibernate.reactive.panache.PanacheRepositoryBase.persist(PanacheRepositoryBase.java:54)
-	at com.genz.auth.repository.UserRepository_ClientProxy.persist(Unknown Source)
-	at com.genz.auth.service.AuthService.register(AuthService.java:37)
-	at com.genz.auth.service.AuthService_ClientProxy.register(Unknown Source)
-	at com.genz.auth.resource.AuthResource.register(AuthResource.java:27)
-	at com.genz.auth.resource.AuthResource$quarkusrestinvoker$register_5bcd4184ec36731a52252483070e75be2601eb0f.invoke(Unknown Source)
-	at org.jboss.resteasy.reactive.server.handlers.InvocationHandler.handle(InvocationHandler.java:29)
-	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:141)
-	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
-	at org.jboss.resteasy.reactive.server.vertx.VertxResteasyReactiveRequestContext$1$1.handle(VertxResteasyReactiveRequestContext.java:84)
-	at org.jboss.resteasy.reactive.server.vertx.VertxResteasyReactiveRequestContext$1$1.handle(VertxResteasyReactiveRequestContext.java:81)
-	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
-	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:252)
-	at io.vertx.core.impl.ContextInternal.lambda$runOnContext$0(ContextInternal.java:50)
-	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173)
-	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-
-2025-03-01 14:35:28 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-8) Restarting quarkus due to changes in AuthService.class.
-2025-03-01 14:35:28 INFO  [io.quarkus] (Quarkus Main Thread) module-auth stopped in 0.109s
+2025-03-01 16:24:27 WARN  [io.quarkus.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.datasource.jdbc.url" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
+2025-03-01 16:24:27 WARN  [io.quarkus.hibernate.orm.runtime.service.QuarkusRuntimeInitDialectFactory] (JPA Startup Thread) Persistence unit default-reactive: Could not retrieve the database version to check it is at least 12.0.0
+2025-03-01 16:24:27 INFO  [io.quarkus] (Quarkus Main Thread) module-auth 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 4.657s. Listening on: http://localhost:8080
+2025-03-01 16:24:27 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-03-01 16:24:27 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-orm, hibernate-reactive, hibernate-reactive-panache, reactive-pg-client, rest, rest-jackson, security, security-jpa-reactive, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+2025-03-01 16:24:27 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-13) Live reload total time: 10.184s 
+2025-03-01 16:33:50 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-15) Restarting quarkus due to changes in GenericExceptionMapper.class, UnauthorizedExceptionMapper.class, ForbiddenExceptionMapper.class, NotFoundExceptionMapper.class.
+2025-03-01 16:33:50 INFO  [io.quarkus] (Quarkus Main Thread) module-auth stopped in 0.139s

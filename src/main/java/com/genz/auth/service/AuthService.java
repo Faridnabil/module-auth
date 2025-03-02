@@ -15,6 +15,8 @@ import lombok.RequiredArgsConstructor;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 @ApplicationScoped
 @RequiredArgsConstructor
 public class AuthService {
@@ -28,7 +30,8 @@ public class AuthService {
     public Uni<AuthResponseDto> register(RegisterRequestDto registerRequestDto) {
         UserEntity user = new UserEntity();
         user.setUsername(registerRequestDto.getUsername());
-        user.setPassword(registerRequestDto.getPassword()); // Anda harus mengenkripsi password sebelum menyimpannya
+        String hashedPassword = BCrypt.hashpw(registerRequestDto.getPassword(), BCrypt.gensalt());
+        user.setPassword(hashedPassword);
         user.setEmail(registerRequestDto.getEmail());
         user.setRole(registerRequestDto.getRole());
 
@@ -51,20 +54,23 @@ public class AuthService {
     @WithSession
     public Uni<AuthResponseDto> login(LoginRequestDto loginRequestDto) {
         return userRepository.findByUsername(loginRequestDto.getUsername())
-                .onItem().ifNotNull().transform(user -> {
-                    if (user.getPassword().equals(loginRequestDto.getPassword())) {
+                .onItem().ifNotNull().transformToUni(user -> {
+                    // Validasi password
+                    if (BCrypt.checkpw(loginRequestDto.getPassword(), user.getPassword())) {
+                        // Jika password valid, generate token
                         Set<String> roles = new HashSet<>();
                         roles.add(user.getRole());
                         String token = tokenValidator.generateToken(user.getUsername(), roles, user.getEmail());
 
+                        // Buat response
                         AuthResponseDto authResponseDto = new AuthResponseDto();
-                        authResponseDto.setToken(token);
                         authResponseDto.setUsername(user.getUsername());
                         authResponseDto.setRole(user.getRole());
+                        authResponseDto.setToken(token);
 
-                        return authResponseDto;
+                        return Uni.createFrom().item(authResponseDto);
                     } else {
-                        throw new RuntimeException("Invalid username or password");
+                        return Uni.createFrom().failure(new RuntimeException("Invalid username or password"));
                     }
                 })
                 .onItem().ifNull().failWith(() -> new RuntimeException("User not found"));

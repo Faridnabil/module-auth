@@ -1,34 +1,7 @@
-2025-03-01 16:33:53 WARN  [io.quarkus.config] (Quarkus Main Thread) Unrecognized configuration key "quarkus.datasource.jdbc.url" was provided; it will be ignored; verify that the dependency extension for this configuration is set or that you did not make a typo
-2025-03-01 16:33:54 WARN  [io.quarkus.hibernate.orm.runtime.service.QuarkusRuntimeInitDialectFactory] (JPA Startup Thread) Persistence unit default-reactive: Could not retrieve the database version to check it is at least 12.0.0
-2025-03-01 16:33:54 INFO  [io.quarkus] (Quarkus Main Thread) module-auth 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 3.587s. Listening on: http://localhost:8080
-2025-03-01 16:33:54 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
-2025-03-01 16:33:54 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-orm, hibernate-reactive, hibernate-reactive-panache, reactive-pg-client, rest, rest-jackson, security, security-jpa-reactive, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
-2025-03-01 16:33:54 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-15) Live reload total time: 7.492s 
-2025-03-01 16:52:33 ERROR [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-17) Failed to delete resources: java.nio.file.NoSuchFileException: C:\java\genz-company\module-auth\target\classes\application.properties
-	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
-	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
-	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
-	at java.base/sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:273)
-	at java.base/sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:104)
-	at java.base/java.nio.file.Files.delete(Files.java:1152)
-	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.checkForFileChange(RuntimeUpdatesProcessor.java:1013)
-	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:477)
-	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:455)
-	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:163)
-	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:150)
-	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$4(ContextImpl.java:192)
-	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
-	at io.vertx.core.impl.ContextImpl$1.execute(ContextImpl.java:221)
-	at io.vertx.core.impl.WorkerTask.run(WorkerTask.java:56)
-	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
-	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2675)
-	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2654)
-	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1627)
-	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1594)
-	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
-	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-
-2025-03-01 16:52:33 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-17) Restarting quarkus due to changes in application.properties.
-2025-03-01 16:52:33 INFO  [io.quarkus] (Quarkus Main Thread) module-auth stopped in 0.144s
+2025-03-02 12:46:51 WARN  [io.quarkus.hibernate.orm.runtime.service.QuarkusRuntimeInitDialectFactory] (JPA Startup Thread) Persistence unit default-reactive: Could not retrieve the database version to check it is at least 12.0.0
+2025-03-02 12:46:51 INFO  [io.quarkus] (Quarkus Main Thread) module-auth 1.0.0-SNAPSHOT on JVM (powered by Quarkus 3.19.1) started in 4.038s. Listening on: http://0.0.0.0:8080
+2025-03-02 12:46:51 INFO  [io.quarkus] (Quarkus Main Thread) Profile dev activated. Live Coding activated.
+2025-03-02 12:46:51 INFO  [io.quarkus] (Quarkus Main Thread) Installed features: [cdi, hibernate-orm, hibernate-reactive, hibernate-reactive-panache, reactive-pg-client, rest, rest-jackson, security, security-jpa-reactive, smallrye-context-propagation, smallrye-jwt, smallrye-openapi, swagger-ui, vertx]
+2025-03-02 12:46:51 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 14.928s 
+2025-03-02 12:49:28 INFO  [io.quarkus.deployment.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-3) Restarting quarkus due to changes in AuthService.class.
+2025-03-02 12:49:28 INFO  [io.quarkus] (Quarkus Main Thread) module-auth stopped in 0.142s
