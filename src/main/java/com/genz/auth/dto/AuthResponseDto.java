@@ -6,5 +6,6 @@ import lombok.Data;
 public class AuthResponseDto {
     private String username;
     private String role;
+    private boolean statusAktif;
     private String token;
 }

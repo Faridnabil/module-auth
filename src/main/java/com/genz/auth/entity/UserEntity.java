@@ -23,4 +23,7 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String role;
+
+    @Column(name = "status_aktif")
+    private boolean statusAktif;
 }

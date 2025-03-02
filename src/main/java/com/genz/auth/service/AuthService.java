@@ -30,10 +30,13 @@ public class AuthService {
     public Uni<AuthResponseDto> register(RegisterRequestDto registerRequestDto) {
         UserEntity user = new UserEntity();
         user.setUsername(registerRequestDto.getUsername());
+
         String hashedPassword = BCrypt.hashpw(registerRequestDto.getPassword(), BCrypt.gensalt());
         user.setPassword(hashedPassword);
+        
         user.setEmail(registerRequestDto.getEmail());
         user.setRole(registerRequestDto.getRole());
+        user.setStatusAktif(true);
 
         return userRepository.persist(user)
                 .onItem().transform(ignore -> {
@@ -42,9 +45,10 @@ public class AuthService {
                     String token = tokenValidator.generateToken(user.getUsername(), roles, user.getEmail());
 
                     AuthResponseDto authResponseDto = new AuthResponseDto();
-                    authResponseDto.setToken(token);
                     authResponseDto.setUsername(user.getUsername());
                     authResponseDto.setRole(user.getRole());
+                    authResponseDto.setStatusAktif(user.isStatusAktif());
+                    authResponseDto.setToken(token);
 
                     return authResponseDto;
                 });
